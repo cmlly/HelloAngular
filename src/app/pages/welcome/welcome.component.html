@@ -1,0 +1,32 @@
+<nz-table #basicTable [nzData]="listData.data" [nzLoading]="loading" [nzFrontPagination]="false" [nzTotal]="total" [(nzPageIndex)]="currentPage" [nzPageSize]="5" (nzPageIndexChange)="changePageIndex($event)">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>手机号</th>
+    <th>邮箱</th>
+    <th>OPENID</th>
+    <th>UID</th>
+    <th>昵称</th>
+    <th>推荐人</th>
+    <th>注册时间</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of basicTable.data">
+    <td>{{ data.id }}</td>
+    <td>{{ data.phone }}</td>
+    <td>{{ data.email }}</td>
+    <td>{{ data.openid }}</td>
+    <td>{{ data.uid }}</td>
+    <td>{{ data.nickname }}</td>
+    <td>{{ data.inviter }}</td>
+    <td>{{ data.add_time }}</td>
+    <td>
+      <a>重置手机密码</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a>重置邮箱密码</a>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>

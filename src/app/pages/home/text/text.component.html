@@ -1,0 +1,48 @@
+<p>text works!</p>
+<button nz-button (click)="toggle()">changed</button>
+<div [@openClose]="isOpen ? 'open': 'closed' " class="open-close-container">
+  <p>This box is now {{ isOpen ? 'Open' : 'Closed' }}</p>
+</div>
+<div class="container" style="margin-top: 24px">
+  <div nz-row [nzGutter]="16">
+    <div nz-col [nzSpan]="8">
+      <div class="box">
+        <img src="../../../../assets/images/text/index.jpg">
+        <div class="box-content">
+          <h3 class="title">Williamson</h3>
+          <span class="post">Web designer</span>
+          <ul class="icon">
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><i class="fa fa-link"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <div class="box">
+        <img src="../../../../assets/images/text/index.jpg">
+        <div class="box-content">
+          <h3 class="title">冬季新时尚</h3>
+          <span class="post">Web designer</span>
+          <ul class="icon">
+            <li><a href="#"><i class="fa fa-search"></i></a></li>
+            <li><a href="#"><i class="fa fa-link"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="8">
+      <div class="box">
+        <img src="../../../../assets/images/text/index.jpg">
+        <div class="box-content">
+          <h3 class="title">Williamson</h3>
+          <span class="post">Web designer</span>
+          <ul class="icon">
+            <li><a href="#"><i nz-icon nzType="instagram" nzTheme="outline"></i></a></li>
+            <li><a href="#"><i nz-icon nzType="dingding" nzTheme="outline"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

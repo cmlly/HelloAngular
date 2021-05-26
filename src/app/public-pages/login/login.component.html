@@ -1,0 +1,49 @@
+<div class="body-container">
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <div class="form">
+        <h1>注册</h1>
+        <div class="social-container">
+          <a class="social"><i class="icon-size" style="color: #007CF9" nz-icon nzType="dingtalk" nzTheme="outline"></i></a>
+          <a class="social"><i class="icon-size" style="color: #FC6D26" nz-icon nzType="gitlab" nzTheme="outline"></i></a>
+          <a class="social"><i class="icon-size" style="color: #1AAD19" nz-icon nzType="wechat" nzTheme="outline"></i></a>
+        </div>
+        <span>第三方账号注册</span>
+<!--        <input type="text" placeholder="名称" />-->
+        <input [(ngModel)]="registerEmail" type="email" placeholder="邮箱" />
+        <input [(ngModel)]="registerPassword" type="password" placeholder="密码" />
+        <button (click)="register()">注册</button>
+      </div>
+    </div>
+    <div class="form-container sign-in-container">
+      <div class="form">
+        <h1>登录</h1>
+        <div class="social-container">
+          <a class="social"><i class="icon-size" style="color: #007CF9" nz-icon nzType="dingtalk" nzTheme="outline"></i></a>
+          <a class="social"><i class="icon-size" style="color: #FC6D26" nz-icon nzType="gitlab" nzTheme="outline"></i></a>
+          <a class="social"><i class="icon-size" style="color: #1AAD19" nz-icon nzType="wechat" nzTheme="outline"></i></a>
+        </div>
+        <span>第三方账号登录</span>
+          <input [(ngModel)]="username" placeholder="用户账号" />
+          <input type="password" [(ngModel)]="password"  placeholder="密码" />
+        <a href="#">忘记密码？</a>
+        <button (click)="login()">登录</button>
+      </div>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>欢迎回来！</h1>
+          <p>请您先登录的个人信息，进行操作。</p>
+          <button class="ghost" id="signIn" (click)="changeLogin()">登录</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>你好朋友！</h1>
+          <p>输入您的个人信息注册成为会员。</p>
+          <button class="ghost" id="signUp" (click)="changeRegister()">注册</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

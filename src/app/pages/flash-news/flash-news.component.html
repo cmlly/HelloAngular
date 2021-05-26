@@ -1,0 +1,55 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="category">快讯类别</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请选择快讯类别!">
+      <nz-select formControlName="category" id="category">
+        <nz-option nzLabel="快讯" nzValue="flash"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="language">语言类别</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请选择语言!">
+      <nz-select formControlName="language" id="language">
+        <nz-option *ngFor="let item of config" [nzLabel]="item.key" [nzValue]="item.val"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">标题</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入标题!">
+      <input nz-input formControlName="title" id="title" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item hidden>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="synopsis">简介</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入简介!">
+      <input nz-input formControlName="synopsis" id="synopsis" />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="content">内容</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="请输入内容!">
+      <textarea nz-input [nzAutosize]="{ minRows: 3 }" formControlName="content" id="content" ></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="content">图片</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24">
+      <nz-upload
+        nzType="drag"
+        [nzMultiple]="false"
+        nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+        (nzChange)="handleChange($event)"
+      >
+        <p class="ant-upload-drag-icon">
+          <i nz-icon nzType="inbox"></i>
+        </p>
+        <p class="ant-upload-text">点击或者拖拽图片到这里进行上传</p>
+<!--        <p class="ant-upload-hint">-->
+<!--          Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files-->
+<!--        </p>-->
+      </nz-upload>
+    </nz-form-control>
+  </nz-form-item>
+</form>
